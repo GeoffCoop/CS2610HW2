@@ -1,0 +1,57 @@
+
+h1 {
+    background-color: black;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+h2 {
+    background-color: #1B1B1B;
+    color: white;
+    font-family: sans-serif;
+    
+}
+
+h3 {
+    background-color: #252525;
+    color: white;
+    font-family: sans-serif;
+}
+
+table {
+    border: 3px solid darkgreen;
+    vertical-align: text-bottom;
+    margin-bottom: 15px;
+}
+
+tr:nth-child(odd){
+    background-color: lightgray;
+}
+
+tr:first-of-type {
+    background-color: #979797;
+}
+
+th {
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+tr {
+    font-family: sans-serif;    
+}
+
+a:visited {
+    color: greenyellow;
+}
+a:hover {
+    color: orange;
+}
+
+#lowdiv {
+    background-image: url(https://fatmintech.files.wordpress.com/2014/12/git_squid_cat.png);
+    height: 1000px;
+}
