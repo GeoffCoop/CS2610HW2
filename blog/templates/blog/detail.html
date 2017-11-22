@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+
+<h1>{{blog.title}}</h1>
+<p>{{blog.content}}</p>
+<h3>Comments</h3>
+<!-- For comments in chrono order -->
+{% for comment in blog.comment_set.all %}
+    <div id="blogset">
+        <h4>{{comment.nickname}}</h4>
+        <p>{{comment.content}}</p>
+    </div>
+{% endfor %}
+<form action="{% url 'blog:post' blog.id %}" method="post">
+{% csrf_token %}
+    <label for="nickname">Nickname:</label>
+    <input type="text" name='nickname' value="{{comment.nickname}}"> <br />
+    <label for="email">Email:</label>
+    <input type='email' name="email" value={{comment.email}}> <br />
+    <label for="text">Comment: </label> 
+    <input type='textarea' rows=10 name="content" id="text" value={{comment.content}} /> <br />
+<input type="submit" value="Comment (This will not work, and, i believe is the only not working part)" />
+</form>

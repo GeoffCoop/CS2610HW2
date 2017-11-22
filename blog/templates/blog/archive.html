@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+
+<!-- FIX THIS, IF BLOGS -->
+{% if blogs %}
+    {% for blog in blogs %}
+    <div id="blogset">
+        <!-- title, authors_name, content, posted_date-->
+        <h3><a href="{% url 'blog:blog' blog.id %}">{{blog.title}}</a></h3>
+        <h4>{{blog.authors_name}}    {{blog.posted_date}}</h4>
+        <p>{{blog.content | truncatewords:200}}</p>
+        <h4>There are <a href="{% url 'blog:blog' blog.id %}">XX comments</a></h4>
+    </div>
+    {% endfor %}
+    
+    
+{% else %}
+    <p>There are no blog posts yet on this site</p>
+{% endif %}
